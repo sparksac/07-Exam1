@@ -64,6 +64,8 @@ def run_test_problem3():
 #   -- Etc. writing chunks of code and testing them ** ONE AT A TIME. **
 #
 ###############################################################################
+
+
 def problem3(rect, n, window):
     """
     See    problem3_pictures.pdf     for pictures that may help you
@@ -94,7 +96,7 @@ def problem3(rect, n, window):
       :type window:  rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function, TESTING each step as you go.
+    # Done: 2. Implement and test this function, TESTING each step as you go.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     rect.attach_to(window)
@@ -102,7 +104,8 @@ def problem3(rect, n, window):
     key = rect.get_lower_right_corner()
     radius = lime / 2
     for k in range(n):
-        circle = rg.Circle(rg.Point(key.x + (k * radius), key.y + (k * radius)), radius)
+        circle = rg.Circle(rg.Point(key.x + (k * (2/math.sqrt(2)) * radius), key.y + (k * (2/math.sqrt(2)) * radius)),
+                           radius)
         circle.attach_to(window)
     window.render()
 # -----------------------------------------------------------------------------
