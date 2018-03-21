@@ -2,10 +2,11 @@
 Exam 1, problem 3.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  March 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Anthony Sparks.  March 2018.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
+import math
 
 
 def main():
@@ -96,8 +97,14 @@ def problem3(rect, n, window):
     # TODO: 2. Implement and test this function, TESTING each step as you go.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
-
-
+    rect.attach_to(window)
+    lime = rect.get_height()
+    key = rect.get_lower_right_corner()
+    radius = lime / 2
+    for k in range(n):
+        circle = rg.Circle(rg.Point(key.x + (k * radius), key.y + (k * radius)), radius)
+        circle.attach_to(window)
+    window.render()
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
